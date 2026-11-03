@@ -1,0 +1,635 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a0b12">
+  <meta name="description" content="A creative coding studio for building, previewing and shipping ideas.">
+  <title>CodeForge — Build in flow</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/monaco-editor@0.52.2/min/vs/loader.js"></script>
+</head>
+
+<body>
+  <div class="ambient ambient-one" aria-hidden="true"></div>
+  <div class="ambient ambient-two" aria-hidden="true"></div>
+  <div class="noise" aria-hidden="true"></div>
+  <header class="topbar">
+    <button class="brand" id="brandHome" aria-label="CodeForge home"><span class="brand-mark"><i
+          class="fa-solid fa-code"></i></span><span>codeforge<span class="brand-period">.</span></span></button>
+    <nav class="main-nav" id="primaryNav" aria-label="Main navigation">
+      <button class="nav-link active" data-view="home">Overview</button>
+      <button class="nav-link" data-view="workspace">Workspace</button>
+      <button class="nav-link" data-view="studio">Creative tools <span class="nav-new">6</span></button>
+      <button class="nav-link" data-view="library">Learn</button>
+      <button class="nav-link" data-view="github">GitHub</button>
+    </nav>
+    <div class="topbar-actions">
+      <button class="icon-button command-trigger" id="commandTrigger" aria-label="Open command palette"
+        title="Command palette"><i class="fa-solid fa-magnifying-glass"></i><kbd>⌘ K</kbd></button>
+     
+      <button class="avatar-button" id="avatarButton" title="Account"><i class="fa-regular fa-user"></i></button>
+    </div>
+    <button class="mobile-menu" id="mobileMenu" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
+  </header>
+
+  <main>
+    <section id="home" class="view home-view active">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="live-pulse"></span> YOUR IDEAS, IN THEIR ELEMENT</div>
+          <h1>Make the web<br><span class="gradient-text">feel like yours.</span></h1>
+          <p class="hero-lead">A creative coding studio to turn a spark into something real. Write code, see it come
+            alive, and keep your flow.</p>
+          <div class="hero-actions">
+            <button class="button button-primary button-large" data-view="workspace"><i class="fa-solid fa-bolt"></i>
+              Open workspace <span class="button-arrow">↗</span></button>
+            <button class="button button-ghost button-large" data-view="studio"><i
+                class="fa-solid fa-wand-magic-sparkles"></i> Explore tools</button>
+          </div>
+          <div class="hero-proof">
+            <div class="proof-avatars"><span>CF</span><span>JS</span><span>CSS</span><span>✦</span></div><span>One place
+              for the whole creative loop</span>
+          </div>
+        </div>
+        <div class="hero-art" aria-label="CodeForge workspace preview">
+          <div class="hero-glow"></div>
+          <div class="orbit orbit-a"></div>
+          <div class="orbit orbit-b"></div>
+          <div class="preview-window">
+            <div class="preview-window-top">
+              <div class="traffic"><i></i><i></i><i></i></div><span class="window-tab"><i
+                  class="fa-brands fa-html5"></i> index.html</span><span class="window-live"><i></i> LIVE</span>
+            </div>
+            <div class="preview-window-body">
+              <div class="mock-editor">
+                <div class="mock-line"><span>01</span><code><b>&lt;section</b> class=<em>"intro"</em><b>&gt;</b></code>
+                </div>
+                <div class="mock-line">
+                  <span>02</span><code>&nbsp; <b>&lt;span</b> class=<em>"spark"</em><b>&gt;</b>✦<b>&lt;/span&gt;</b></code>
+                </div>
+                <div class="mock-line">
+                  <span>03</span><code>&nbsp; <b>&lt;h1&gt;</b>Stay curious.<b>&lt;/h1&gt;</b></code></div>
+                <div class="mock-line">
+                  <span>04</span><code>&nbsp; <b>&lt;p&gt;</b>Make something matter.<b>&lt;/p&gt;</b></code></div>
+                <div class="mock-line">
+                  <span>05</span><code>&nbsp; <b>&lt;button&gt;</b>Start creating<b>&lt;/button&gt;</b></code></div>
+                <div class="mock-line"><span>06</span><code><b>&lt;/section&gt;</b></code></div>
+                <div class="mock-line comment"><span>07</span><code><i>/* your next idea goes here */</i></code></div>
+              </div>
+              <div class="mock-preview">
+                <div class="mock-preview-top"><span>PREVIEW</span>
+                  <div><i></i><i></i><i></i></div>
+                </div>
+                <div class="mock-site">
+                  <span class="mock-spark">✦</span>
+                  <div class="mock-site-title">Stay<br><strong>curious.</strong></div>
+                  <p>Make something<br>that matters.</p>
+                  <button>Start creating <b>↗</b></button>
+                  <div class="mock-decoration"></div>
+                </div>
+              </div>
+            </div>
+            <div class="preview-window-bottom"><span><i class="fa-solid fa-circle-check"></i> All changes
+                saved</span><span>HTML <b>·</b> UTF-8 <b>·</b> 100%</span></div>
+          </div>
+          <div class="float-note note-ai"><span class="note-icon ai-icon">✦</span><span><b>AI co-pilot</b><small>Ready
+                when you are</small></span><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+          <div class="float-note note-build"><span class="build-check"><i
+                class="fa-solid fa-check"></i></span><span><b>Preview updated</b><small>just now</small></span></div>
+          <div class="hero-asterisk">✳</div>
+        </div>
+      </div>
+
+      <div class="marquee-row"><span>YOUR CREATIVE WORKBENCH</span>
+        <div class="marquee-line"></div><span>DESIGNED FOR THE FLOW STATE <i class="fa-solid fa-arrow-down"></i></span>
+      </div>
+
+      <section class="value-section">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">A BETTER WAY TO BUILD</div>
+            <h2>Everything clicks<br><span class="muted-heading">when it’s all together.</span></h2>
+          </div>
+          <p>Skip the setup spiral. Keep your tools close, your preview live, and your ideas moving forward.</p>
+        </div>
+        <div class="value-grid">
+          <article class="value-card value-card-wide">
+            <div class="value-icon purple-icon"><i class="fa-solid fa-code"></i></div>
+            <div class="value-copy"><span class="card-kicker">01 / BUILD</span>
+              <h3>Your workspace,<br>without the clutter.</h3>
+              <p>A focused editor with your project files, smart shortcuts, and a live canvas side by side.</p><button
+                class="text-link" data-view="workspace">Explore the workspace <i
+                  class="fa-solid fa-arrow-right"></i></button>
+            </div>
+            <div class="mini-tabs"><span class="selected"><i class="fa-brands fa-html5"></i> index.html</span><span><i
+                  class="fa-brands fa-css3-alt"></i> styles.css</span><span><i class="fa-brands fa-square-js"></i>
+                app.js</span>
+              <div class="mini-cursor"></div>
+            </div>
+          </article>
+          <article class="value-card">
+            <div class="value-icon aqua-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div><span
+              class="card-kicker">02 / PLAY</span>
+            <h3>Make the details<br>feel just right.</h3>
+            <p>Mix palettes, tune gradients, shape shadows, and bring your ideas into code.</p><button class="text-link"
+              data-view="studio">Open creative tools <i class="fa-solid fa-arrow-right"></i></button>
+            <div class="swatches" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+          </article>
+          <article class="value-card">
+            <div class="value-icon yellow-icon"><i class="fa-solid fa-sparkles"></i></div><span class="card-kicker">03 /
+              GROW</span>
+            <h3>A little help.<br>A lot more momentum.</h3>
+            <p>Ask the AI mentor to explain, debug, review, or help you think through what to build next.</p><button
+              class="text-link" data-view="workspace">Meet your co-pilot <i
+                class="fa-solid fa-arrow-right"></i></button>
+            <div class="ai-orbit-art" aria-hidden="true"><span>✦</span><i></i><i></i></div>
+          </article>
+        </div>
+      </section>
+      <section class="bottom-cta">
+        <div>
+          <div class="eyebrow">A FRESH CANVAS IS WAITING</div>
+          <h2>What will you make today?</h2>
+        </div><button class="button button-primary button-large" data-view="workspace">Start a project <i
+            class="fa-solid fa-arrow-right"></i></button>
+        <div class="cta-spark">✳</div>
+      </section>
+      <footer class="footer"><a class="footer-brand" href="#home"><span class="brand-mark"><i
+              class="fa-solid fa-code"></i></span> codeforge<span class="brand-period">.</span></a><span>Built for the
+          joy of making things.</span><span class="footer-shortcuts"><kbd>⌘</kbd> + <kbd>K</kbd> Command menu</span>
+      </footer>
+    </section>
+
+    <section id="workspace" class="view app-view">
+      <div class="workspace-header">
+        <div>
+          <div class="crumb"><span>WORKSPACE</span><i class="fa-solid fa-chevron-right"></i><span
+              id="projectCrumb">Untitled project</span></div>
+          <h1>Make something <span class="gradient-text">matter.</span></h1>
+          <p>Your canvas is ready. The little details can come later.</p>
+        </div>
+        <div class="workspace-head-actions">
+          <div class="save-indicator" id="saveIndicator"><i class="fa-solid fa-cloud-arrow-up"></i><span>Saved
+              locally</span></div><button class="button button-quiet" id="downloadBtn"><i
+              class="fa-solid fa-arrow-down"></i> Export</button><button class="button button-primary" id="runBtn"><i
+              class="fa-solid fa-play"></i> Run <kbd>Ctrl ↵</kbd></button>
+        </div>
+      </div>
+      <div class="ide-shell">
+        <aside class="ide-sidebar">
+          <div class="sidebar-toolbar"><span>PROJECT</span>
+            <div><button id="newFileBtn" title="New file"><i class="fa-solid fa-file-circle-plus"></i></button><button
+                id="projectMenuBtn" title="Project options"><i class="fa-solid fa-ellipsis"></i></button></div>
+          </div>
+          <button class="project-root" id="projectNameButton"><i class="fa-solid fa-chevron-down"></i><i
+              class="fa-solid fa-folder-open root-folder"></i><span id="projectName">untitled-project</span></button>
+          <div id="fileTree" class="file-tree"></div>
+          <div class="sidebar-divider"></div>
+          <div class="sidebar-tools-title">QUICK TOOLS</div>
+          <button class="sidebar-tool" data-tool="palette"><i class="fa-solid fa-palette"></i> Color palette
+            <span>↗</span></button>
+          <button class="sidebar-tool" data-tool="gradient"><i class="fa-solid fa-circle-half-stroke"></i> Gradient lab
+            <span>↗</span></button>
+          <button class="sidebar-tool" data-tool="motion"><i class="fa-solid fa-wand-magic-sparkles"></i> Motion lab
+            <span>↗</span></button>
+          <button class="sidebar-tool" data-tool="snippets"><i class="fa-solid fa-layer-group"></i> Snippets
+            <span>↗</span></button>
+          <div class="sidebar-bottom">
+            <div class="workspace-status"><span class="status-light"></span><span>Local workspace</span><button
+                id="projectInfoBtn" title="Workspace is stored in this browser"><i
+                  class="fa-regular fa-circle-question"></i></button></div>
+            <div class="keyboard-hint"><kbd>⌘</kbd> + <kbd>↵</kbd><span>Run project</span></div>
+          </div>
+        </aside>
+        <section class="ide-main">
+          <div class="editor-toolbar">
+            <div id="fileTabs" class="file-tabs"></div>
+            <div class="editor-toolbar-actions"><select id="languageSelect" aria-label="Choose language">
+                <option value="html">HTML</option>
+                <option value="css">CSS</option>
+                <option value="javascript">JavaScript</option>
+                <option value="python">Python</option>
+                <option value="java">Java</option>
+                <option value="php">PHP</option>
+                <option value="c">C</option>
+                <option value="cpp">C++</option>
+                <option value="sql">SQL</option>
+                <option value="json">JSON</option>
+                <option value="plaintext">Plain text</option>
+              </select><button id="formatBtn" title="Format code"><i
+                  class="fa-solid fa-wand-magic-sparkles"></i></button><button id="copyFileBtn"
+                title="Copy active file"><i class="fa-regular fa-copy"></i></button></div>
+          </div>
+          <div class="editor-stage">
+            <div id="editor"></div><textarea id="editorFallback" spellcheck="false" aria-label="Code editor"></textarea>
+            <div class="editor-empty" id="editorEmpty" hidden>Connecting your editor…</div>
+          </div>
+          <div class="editor-statusbar"><span class="status-language" id="languageStatus">HTML</span><span
+              id="cursorStatus">Ln 1, Col 1</span><span id="lineStatus">1 line</span><span
+              class="status-grow"></span><span><i class="fa-solid fa-code-branch"></i>
+              main</span><span>UTF-8</span><span><i class="fa-solid fa-circle-check"></i> Ready</span></div>
+        </section>
+        <aside class="ide-inspector">
+          <div class="inspector-tabs"><button class="inspector-tab active" data-panel="previewPanel"><i
+                class="fa-regular fa-window-maximize"></i><span>Preview</span></button><button class="inspector-tab"
+              data-panel="consolePanel"><i class="fa-solid fa-terminal"></i><span>Console</span></button><button
+              class="inspector-tab" data-panel="aiPanel"><i class="fa-solid fa-sparkles"></i><span>AI</span></button>
+          </div>
+          <section class="inspector-panel active" id="previewPanel">
+            <div class="preview-toolbar">
+              <div class="preview-size"><button class="viewport-button active" data-viewport="100%" title="Desktop"><i
+                    class="fa-solid fa-desktop"></i></button><button class="viewport-button" data-viewport="768px"
+                  title="Tablet"><i class="fa-solid fa-tablet-screen-button"></i></button><button
+                  class="viewport-button" data-viewport="390px" title="Mobile"><i
+                    class="fa-solid fa-mobile-screen-button"></i></button></div><button class="icon-button small"
+                id="refreshPreview" title="Refresh preview"><i class="fa-solid fa-rotate-right"></i></button>
+            </div>
+            <div class="preview-stage" id="previewStage"><iframe id="preview" title="Live website preview"
+                sandbox="allow-scripts"></iframe></div>
+            <div class="preview-foot"><span><i class="fa-solid fa-circle"></i> SANDBOXED LIVE PREVIEW</span></div>
+          </section>
+          <section class="inspector-panel console-panel" id="consolePanel">
+            <div class="panel-title-row">
+              <div><span class="panel-eyebrow">DEVELOPER TOOLS</span>
+                <h3>Console</h3>
+              </div><button class="text-link" id="clearConsole">Clear</button>
+            </div>
+            <div id="consoleOutput" class="console-output">
+              <div class="console-welcome"><i class="fa-solid fa-terminal"></i><span>Run your code to see messages
+                  here.</span></div>
+            </div><label class="stdin-label" for="stdin">Program input</label><textarea id="stdin"
+              placeholder="Optional standard input…"></textarea>
+          </section>
+          <section class="inspector-panel ai-panel" id="aiPanel">
+            <div class="ai-panel-head">
+              <div class="ai-brand"><span class="ai-mark">✦</span>
+                <div><b>CodeForge AI</b><small id="aiStatus">Your creative co-pilot</small></div><span
+                  class="ai-online"><i></i> READY</span>
+              </div>
+              <p>Ask questions about your code or choose a tool to get moving.</p>
+            </div>
+            <div class="ai-quick-actions"><button data-ai="Explain"><i class="fa-regular fa-lightbulb"></i>
+                Explain</button><button data-ai="Debug"><i class="fa-solid fa-bug"></i> Debug</button><button
+                data-ai="Optimize"><i class="fa-solid fa-gauge-high"></i> Optimize</button><button data-ai="Review"><i
+                  class="fa-solid fa-magnifying-glass-chart"></i> Review</button><button data-ai="Write tests"><i
+                  class="fa-solid fa-vial"></i> Tests</button><button data-ai="Refactor"><i
+                  class="fa-solid fa-wand-magic-sparkles"></i> Refactor</button><button data-ai="Generate code"><i
+                  class="fa-solid fa-plus"></i> Generate</button><button data-ai="Think through this idea"><i
+                  class="fa-regular fa-message"></i> Brainstorm</button></div>
+            <div id="aiMessages" class="ai-messages">
+              <div class="assistant-message"><span class="assistant-avatar">✦</span>
+                <p>Hey! I can explain tricky bits, help untangle a bug, or pair with you on a new idea.</p>
+              </div>
+            </div>
+            <div class="ai-composer"><textarea id="aiPrompt" placeholder="Ask your co-pilot anything…"
+                rows="2"></textarea><button id="aiSend" aria-label="Send prompt"><i
+                  class="fa-solid fa-arrow-up"></i></button></div>
+            <div class="ai-disclaimer">AI can make mistakes. Review code before you run it.</div>
+          </section>
+        </aside>
+      </div>
+    </section>
+
+    <section id="studio" class="view app-view tools-view">
+      <div class="page-intro">
+        <div>
+          <div class="crumb"><span>CREATIVE TOOLS</span><i class="fa-solid fa-chevron-right"></i><span>YOUR
+              TOOLBOX</span></div>
+          <h1>Play with the <span class="gradient-text">details.</span></h1>
+          <p>Small tools for those moments when the feeling is close, but not quite there.</p>
+        </div>
+        <div class="plugin-count"><i class="fa-solid fa-plug"></i><span><b>6</b> built-in tools</span></div>
+      </div>
+      <div class="tool-grid">
+        <article class="tool-card palette-tool">
+          <div class="tool-card-top">
+            <div class="tool-icon palette-icon"><i class="fa-solid fa-palette"></i></div><span
+              class="tool-badge">COLOR</span><span class="tool-more" aria-label="Built-in plugin"><i
+                class="fa-solid fa-plug"></i></span>
+          </div>
+          <div class="tool-card-copy">
+            <h2>Palette mixer</h2>
+            <p>Find a color story that feels like your project. Lock favorites, remix the rest.</p>
+          </div>
+          <div class="palette-strip" id="paletteStrip"></div>
+          <div class="tool-controls"><button class="button button-quiet tool-action" id="shufflePalette"><i
+                class="fa-solid fa-shuffle"></i> Remix palette</button><button class="icon-button small"
+              id="copyPalette" title="Copy palette"><i class="fa-regular fa-copy"></i></button></div>
+          <div class="palette-codes" id="paletteCodes"></div>
+        </article>
+        <article class="tool-card gradient-tool">
+          <div class="tool-card-top">
+            <div class="tool-icon gradient-icon"><i class="fa-solid fa-circle-half-stroke"></i></div><span
+              class="tool-badge">CSS</span><span class="tool-more" aria-label="Built-in plugin"><i
+                class="fa-solid fa-plug"></i></span>
+          </div>
+          <div class="tool-card-copy">
+            <h2>Gradient lab</h2>
+            <p>Shape a gradient, shift the angle, and take the exact CSS into your project.</p>
+          </div>
+          <div class="gradient-preview" id="gradientPreview"><span>YOUR NEXT BACKGROUND</span><b>Made by
+              you.</b><i>✦</i></div>
+          <div class="gradient-controls"><label>COLOR A <input type="color" id="gradientColorA"
+                value="#8765ff"></label><label>COLOR B <input type="color" id="gradientColorB"
+                value="#28d8c6"></label><label class="angle-control">ANGLE <input type="range" id="gradientAngle"
+                min="0" max="360" value="135"><span id="gradientAngleValue">135°</span></label></div>
+          <div class="code-copy-row"><code id="gradientCode">linear-gradient(135deg, #8765ff, #28d8c6)</code><button
+              class="icon-button small" id="copyGradient" aria-label="Copy gradient CSS"><i
+                class="fa-regular fa-copy"></i></button></div><button class="button button-primary full-width"
+            id="applyGradient">Add to project <i class="fa-solid fa-arrow-right"></i></button>
+        </article>
+        <article class="tool-card shadow-tool">
+          <div class="tool-card-top">
+            <div class="tool-icon shadow-icon"><i class="fa-solid fa-cube"></i></div><span
+              class="tool-badge">CSS</span><span class="tool-more" aria-label="Built-in plugin"><i
+                class="fa-solid fa-plug"></i></span>
+          </div>
+          <div class="tool-card-copy">
+            <h2>Shadow shaper</h2>
+            <p>Get the depth just right with a visual box-shadow playground.</p>
+          </div>
+          <div class="shadow-canvas">
+            <div class="shadow-sample" id="shadowSample"><span>SOFT FOCUS</span><b>Look closer</b><i>●</i></div>
+          </div>
+          <div class="range-stack"><label><span>Blur</span><input type="range" id="shadowBlur" min="0" max="60"
+                value="24"><output id="shadowBlurValue">24px</output></label><label><span>Spread</span><input
+                type="range" id="shadowSpread" min="-10" max="30" value="0"><output
+                id="shadowSpreadValue">0px</output></label><label><span>Opacity</span><input type="range"
+                id="shadowOpacity" min="5" max="80" value="30"><output id="shadowOpacityValue">30%</output></label>
+          </div>
+          <div class="code-copy-row"><code id="shadowCode">0 12px 24px 0 rgba(135, 101, 255, .3)</code><button
+              class="icon-button small" id="copyShadow" aria-label="Copy shadow CSS"><i
+                class="fa-regular fa-copy"></i></button></div><button class="button button-quiet full-width"
+            id="applyShadow">Add to project <i class="fa-solid fa-arrow-right"></i></button>
+        </article>
+        <article class="tool-card motion-tool">
+          <div class="tool-card-top">
+            <div class="tool-icon motion-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div><span
+              class="tool-badge">MOTION</span><span class="tool-more" aria-label="Built-in plugin"><i
+                class="fa-solid fa-plug"></i></span>
+          </div>
+          <div class="tool-card-copy">
+            <h2>Motion lab</h2>
+            <p>Preview a little movement, tune its speed, and add reusable keyframes to your CSS.</p>
+          </div>
+          <div class="motion-canvas" id="motionCanvas" aria-label="Animation preview">
+            <div class="motion-orb motion-demo" id="motionOrb"><i class="fa-solid fa-sparkles"></i></div>
+            <span>LIVE PREVIEW</span>
+          </div>
+          <div class="motion-controls">
+            <label for="motionPreset">STYLE
+              <select id="motionPreset">
+                <option value="float">Float</option>
+                <option value="pulse">Pulse</option>
+                <option value="spin">Spin</option>
+                <option value="bounce">Bounce</option>
+                <option value="slide">Slide</option>
+                <option value="tilt3d">3D tilt</option>
+              </select>
+            </label>
+            <label for="motionDuration">DURATION <output id="motionDurationValue">1.4s</output></label>
+            <input type="range" id="motionDuration" min="500" max="3000" step="100" value="1400">
+          </div>
+          <div class="code-copy-row"><code id="motionCode" aria-live="polite"></code><button
+              class="icon-button small" id="copyMotion" aria-label="Copy animation CSS"><i
+                class="fa-regular fa-copy"></i></button></div>
+          <div class="tool-controls"><button class="button button-quiet tool-action" id="replayMotion"><i
+                class="fa-solid fa-rotate-right"></i> Replay</button><button class="button button-primary tool-action"
+              id="applyMotion">Add to project <i class="fa-solid fa-arrow-right"></i></button></div>
+        </article>
+        <article class="tool-card icon-tool">
+          <div class="tool-card-top">
+            <div class="tool-icon icon-icon"><i class="fa-solid fa-shapes"></i></div><span
+              class="tool-badge">SVG</span><span class="tool-more" aria-label="Built-in plugin"><i
+                class="fa-solid fa-plug"></i></span>
+          </div>
+          <div class="tool-card-copy">
+            <h2>Mark maker</h2>
+            <p>Make a tiny geometric mark and save it as clean, editable SVG.</p>
+          </div>
+          <div class="mark-canvas" id="markCanvas"><svg id="markSvg" viewBox="0 0 128 128" role="img"
+              aria-label="Generated geometric mark">
+              <circle cx="64" cy="64" r="46" fill="#8765ff" />
+              <path d="M43 77 64 36l21 41H43Z" fill="#9af7df" />
+              <circle cx="64" cy="74" r="9" fill="#10111a" />
+            </svg></div>
+          <div class="mark-controls"><label>SHAPE<select id="markShape">
+                <option value="orbit">Orbit</option>
+                <option value="spark">Spark</option>
+                <option value="tile">Tile</option>
+              </select></label><label>COLOR<input type="color" id="markColor"
+                value="#8765ff"></label><label>ACCENT<input type="color" id="markAccent" value="#9af7df"></label></div>
+          <button class="button button-quiet full-width" id="downloadMark"><i class="fa-solid fa-arrow-down"></i>
+            Download SVG</button>
+        </article>
+        <article class="tool-card snippet-tool">
+          <div class="tool-card-top">
+            <div class="tool-icon aqua-icon"><i class="fa-solid fa-layer-group"></i></div><span
+              class="tool-badge">SNIPPETS</span><span class="tool-more" aria-label="Built-in plugin"><i
+                class="fa-solid fa-plug"></i></span>
+          </div>
+          <div class="tool-card-copy">
+            <h2>Snippet shelf</h2>
+            <p>Drop a useful starting point straight into your active file.</p>
+          </div>
+          <div class="snippet-list" id="snippetList"></div>
+          <div class="snippet-foot"><i class="fa-solid fa-circle-info"></i> Snippets insert at your cursor position
+          </div>
+        </article>
+      </div>
+      <div class="plugin-strip">
+        <div class="plugin-strip-icon"><i class="fa-solid fa-plug-circle-bolt"></i></div>
+        <div><b>Plugins that feel native.</b>
+          <p>Six browser-based tools are ready to use. Your code stays in your project until you choose to export it.
+          </p>
+        </div><span class="plugin-strip-status"><i></i> 6 ACTIVE</span>
+      </div>
+    </section>
+
+    <section id="library" class="view app-view library-view">
+      <div class="page-intro">
+        <div>
+          <div class="crumb"><span>LEARNING SPACE</span><i class="fa-solid fa-chevron-right"></i><span>FIELD
+              NOTES</span></div>
+          <h1>Learn by <span class="gradient-text">making.</span></h1>
+          <p>Little experiments, useful patterns, and fresh starts for the curious.</p>
+        </div>
+      </div>
+      <nav class="learn-section-nav" aria-label="Learn page sections">
+        <a href="#learn-tutorials"><i class="fa-solid fa-book-open"></i> Tutorials</a>
+        <a href="#learn-challenges"><i class="fa-solid fa-bolt"></i> Challenges</a>
+      </nav>
+      <div class="tutorials-section" id="learn-tutorials">
+        <div class="section-heading tutorials-heading">
+          <div>
+            <div class="eyebrow">START HERE</div>
+            <h2>Guided tutorials</h2>
+          </div>
+          <a class="button button-quiet" href="#tutorial-library">Browse all lessons <i class="fa-solid fa-arrow-down"></i></a>
+        </div>
+        <div class="tutorials-grid">
+          <article class="tutorial-card tutorial-card-featured">
+            <span class="tutorial-tag">HTML / CSS</span>
+            <h3>Build a landing page</h3>
+            <p>Shape a polished hero section, balance spacing, and bring your first idea to life with style.</p>
+            <div class="tutorial-meta"><span>4 steps</span><span>Beginner</span></div>
+          </article>
+          <article class="tutorial-card">
+            <span class="tutorial-tag">JavaScript</span>
+            <h3>Make your page interactive</h3>
+            <p>Learn how to wire click events, update the DOM, and add micro-interactions that feel alive.</p>
+            <div class="tutorial-meta"><span>5 steps</span><span>Starter</span></div>
+          </article>
+          <article class="tutorial-card">
+            <span class="tutorial-tag">UI patterns</span>
+            <h3>Design with a system</h3>
+            <p>Turn a simple layout into a cohesive design system with cards, gradients, and reusable components.</p>
+            <div class="tutorial-meta"><span>3 steps</span><span>Intermediate</span></div>
+          </article>
+        </div>
+      </div>
+      <section class="tutorial-library-section" id="tutorial-library">
+        <div class="section-heading tutorials-heading">
+          <div>
+            <div class="eyebrow">LEARNING LIBRARY</div>
+            <h2>Previous tutorials</h2>
+          </div>
+          <p>Pick a topic, then choose a free lesson in Hindi or English.</p>
+        </div>
+        <div class="tutorial-grid" id="tutorialGrid"></div>
+      </section>
+      <section class="learn-challenges-section" id="learn-challenges" aria-labelledby="learnChallengesTitle">
+        <div class="section-heading tutorials-heading">
+          <div>
+            <div class="eyebrow">PUT IT INTO PRACTICE</div>
+            <h2 id="learnChallengesTitle">Challenges to try</h2>
+          </div>
+          <button class="button button-quiet" type="button" data-view="challenges">Browse all challenges <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+        <div class="learn-challenge-grid" id="learnChallengeGrid"></div>
+      </section>
+      <div class="section-heading starter-project-heading">
+        <div>
+          <div class="eyebrow">MAKE SOMETHING REAL</div>
+          <h2>Starter projects</h2>
+        </div>
+      </div>
+      <div class="library-tabs"><button class="library-tab active" data-library="examples">Starter projects
+          <span id="starterCount">0</span></button></div>
+      <div class="library-grid" id="libraryGrid"></div>
+    </section>
+
+    <section id="challenges" class="view app-view challenge-view" aria-labelledby="challengesTitle">
+      <div class="challenge-heading">
+        <div class="challenge-title">
+          <div class="challenge-eyebrow">LEVEL UP</div>
+          <h1 id="challengesTitle">Coding challenges</h1>
+          <p>Practice fundamentals in every language, track your progress locally and launch the editor with a starter file.</p>
+        </div>
+        <aside class="challenge-progress" aria-live="polite">
+          <span>Your progress</span>
+          <strong><b id="challengeSolved">0</b> of <b id="challengeTotal">0</b> <small>solved</small></strong>
+          <div class="challenge-progress-track"><span id="challengeProgressBar"></span></div>
+          <small>Saved in this browser only.</small>
+        </aside>
+      </div>
+      <div class="challenge-filters">
+        <div class="challenge-language-filters" role="tablist" aria-label="Filter by language" id="challengeLanguageFilters"></div>
+        <div class="challenge-filter-row">
+          <div class="challenge-level-filters" role="group" aria-label="Filter by difficulty">
+            <button type="button" class="active" data-challenge-level="All levels">All levels</button>
+            <button type="button" data-challenge-level="Easy">Easy</button>
+            <button type="button" data-challenge-level="Medium">Medium</button>
+            <button type="button" data-challenge-level="Hard">Hard</button>
+          </div>
+          <label class="challenge-hide-solved"><input type="checkbox" id="hideSolvedChallenges"> <span>Hide solved</span></label>
+        </div>
+      </div>
+      <div class="challenge-grid" id="challengeGrid" aria-live="polite"></div>
+    </section>
+
+    <section id="github" class="view app-view ship-view">
+      <div class="page-intro">
+        <div>
+          <div class="crumb"><span>SHIP IT</span><i class="fa-solid fa-chevron-right"></i><span>GITHUB</span></div>
+          <h1>From your desk<br>to <span class="gradient-text">the world.</span></h1>
+          <p>Connect a repository, choose your branch, and make your next commit from CodeForge.</p>
+        </div><a class="button button-primary" href="/auth/github"><i class="fa-brands fa-github"></i> Connect
+          GitHub</a>
+      </div>
+      <div class="github-workbench">
+        <div class="github-connect-card">
+          <div class="github-card-head"><span class="github-icon"><i class="fa-brands fa-github"></i></span>
+            <div><span class="card-kicker">YOUR ACCOUNT</span>
+              <h2>GitHub connection</h2>
+            </div><span class="connection-state" id="ghState"><i></i> Checking</span>
+          </div>
+          <p id="ghAccount">Connect your GitHub account to load your repositories and push changes.</p><button
+            id="loadRepos" class="button button-quiet"><i class="fa-solid fa-rotate"></i> Load
+            repositories</button><label class="field-label">REPOSITORY<select id="repoSelect">
+              <option value="">Connect and load repositories</option>
+            </select></label><label class="field-label">BRANCH<select id="branchSelect">
+              <option value="">Select a repository first</option>
+            </select></label>
+          <div id="ghFiles" class="github-files"></div>
+        </div>
+        <div class="github-commit-card">
+          <div class="github-card-head"><span class="commit-icon"><i class="fa-solid fa-code-commit"></i></span>
+            <div><span class="card-kicker">COMMIT STUDIO</span>
+              <h2>Commit your work</h2>
+            </div>
+          </div>
+          <p>Choose a file from your repository or use the current project file.</p><label class="field-label">FILE
+            PATH<input id="ghPath" placeholder="src/index.html"></label><label class="field-label">COMMIT MESSAGE<input
+              id="ghMessage" value="Update from CodeForge"></label><button id="loadGhFile"
+            class="button button-quiet full-width"><i class="fa-solid fa-file-arrow-down"></i> Open selected file in
+            editor</button><button id="pushGh" class="button button-primary full-width"><i
+              class="fa-solid fa-arrow-up-from-bracket"></i> Commit & push</button>
+          <pre class="github-log" id="ghLog">Your Git activity will appear here.</pre>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <div class="modal" id="authModal" aria-hidden="true">
+    <div class="modal-backdrop"></div>
+    <section class="modal-card"><button class="modal-close" aria-label="Close">×</button>
+      <div class="modal-brand"><span class="brand-mark"><i class="fa-solid fa-code"></i></span><span>CODEFORGE
+          ACCOUNT</span></div>
+      <h2>Good to see you.</h2>
+      <p>Sign in to your local CodeForge account or create one to get started.</p><label class="field-label"
+        id="authNameWrap">NAME<input id="authName" placeholder="Your name"></label><label
+        class="field-label">EMAIL<input id="authEmail" type="email" placeholder="you@example.com"></label><label
+        class="field-label">PASSWORD<input id="authPassword" type="password"
+          placeholder="At least 6 characters"></label>
+      <div class="auth-actions"><button id="registerBtn" class="button button-quiet">Create account</button><button
+          id="loginSubmit" class="button button-primary">Sign in</button></div><a class="github-auth"
+        href="/auth/github"><i class="fa-brands fa-github"></i> Continue with GitHub</a>
+      <div id="authMsg"></div>
+      <div class="modal-note">Local accounts are stored on this server.</div>
+    </section>
+  </div>
+  <div class="command-overlay" id="commandOverlay" aria-hidden="true">
+    <section class="command-box">
+      <div class="command-input-row"><i class="fa-solid fa-magnifying-glass"></i><input id="commandSearch"
+          placeholder="Search for a command…" autocomplete="off"><kbd>ESC</kbd></div>
+      <div id="commandList" class="command-list"></div>
+      <div class="command-footer"><span>Navigate <kbd>↑</kbd> <kbd>↓</kbd></span><span>Select
+          <kbd>↵</kbd></span><span>Close <kbd>esc</kbd></span></div>
+    </section>
+  </div>
+
+
+  <script src="./app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,13 @@
+{
+  "name": "codeforge-next",
+  "version": "1.0.0",
+  "description": "A creative coding studio with a live IDE, browser-based design plugins, AI co-pilot and GitHub shipping tools.",
+  "type": "module",
+  "scripts": { "start": "node server.js", "dev": "node --watch server.js" },
+  "engines": { "node": ">=20" },
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "dotenv": "^17.2.2",
+    "express": "^5.1.0"
+  }
+}
